@@ -1,12 +1,17 @@
 
+/* =========================================
+   Jaeyong Jung — Academic Website
+   Dark Navy Theme
+   ========================================= */
+
 :root {
-  --ink: #24364B;
-  --muted: #657184;
-  --accent: #526D89;
-  --line: #E5E1D9;
-  --bg: #F7F5F0;
-  --soft: #F0EDE6;
-  --paper: #FFFEFB;
+  --ink: #F5F7FB;
+  --muted: #C3CFDF;
+  --accent: #AFC7E5;
+  --line: #43546A;
+  --bg: #17283E;
+  --soft: #243850;
+  --paper: #1D3048;
 }
 
 * {
@@ -27,17 +32,23 @@ body {
 
 a {
   color: var(--accent);
+  text-underline-offset: 4px;
+}
+
+a:hover {
+  color: #FFFFFF;
 }
 
 .wrap {
   max-width: 940px;
-  margin: auto;
+  margin: 0 auto;
   padding: 0 28px;
 }
 
 /* Header */
+
 .site-header {
-  background: var(--paper);
+  background: #122238;
   border-bottom: 1px solid var(--line);
 }
 
@@ -51,10 +62,14 @@ a {
 }
 
 .brand {
+  color: #FFFFFF;
   font-weight: 700;
   font-size: 20px;
   text-decoration: none;
-  color: var(--ink);
+}
+
+.brand:hover {
+  color: var(--accent);
 }
 
 nav {
@@ -63,22 +78,27 @@ nav {
 }
 
 nav a {
-  text-decoration: none;
   color: var(--muted);
+  text-decoration: none;
   font-size: 15px;
 }
 
-nav a[aria-current="page"],
-nav a:hover {
-  color: var(--accent);
+nav a:hover,
+nav a[aria-current="page"] {
+  color: #FFFFFF;
   font-weight: 650;
 }
 
-/* Main content */
+/* Main Content */
+
 main {
   padding-top: 65px;
   padding-bottom: 95px;
   min-height: 65vh;
+}
+
+h1, h2, h3 {
+  color: #FFFFFF;
 }
 
 h1 {
@@ -99,6 +119,10 @@ h3 {
   margin: 0 0 7px;
 }
 
+p {
+  color: var(--ink);
+}
+
 .subtitle {
   font-size: 18px;
   color: var(--muted);
@@ -115,6 +139,7 @@ h3 {
 }
 
 /* Sections */
+
 .section {
   border-top: 1px solid var(--line);
   margin-top: 48px;
@@ -125,13 +150,21 @@ h3 {
   color: var(--muted);
 }
 
-/* Research entries */
+/* Research Entries */
+
 .entry {
   background: var(--paper);
   border: 1px solid var(--line);
   border-radius: 9px;
   padding: 22px;
   margin-bottom: 16px;
+  transition: background 0.2s ease,
+              border-color 0.2s ease;
+}
+
+.entry:hover {
+  background: var(--soft);
+  border-color: #6683A3;
 }
 
 .entry p {
@@ -139,20 +172,26 @@ h3 {
 }
 
 /* Buttons */
+
 .button {
   display: inline-block;
+  color: #FFFFFF;
+  background: var(--soft);
   border: 1px solid var(--accent);
   border-radius: 6px;
   padding: 9px 17px;
   text-decoration: none;
   font-weight: 600;
+  transition: background 0.2s ease;
 }
 
 .button:hover {
-  background: var(--soft);
+  background: #36516E;
+  color: #FFFFFF;
 }
 
 /* Notices */
+
 .notice {
   background: var(--soft);
   padding: 19px 22px;
@@ -161,15 +200,29 @@ h3 {
 }
 
 /* Footer */
+
 footer {
-  background: var(--paper);
+  background: #122238;
   border-top: 1px solid var(--line);
   color: var(--muted);
   font-size: 14px;
   padding: 24px 0;
 }
 
+footer p {
+  color: var(--muted);
+}
+
+/* Accessibility */
+
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
 /* Mobile */
+
 @media (max-width: 580px) {
   .header-inner {
     align-items: flex-start;
@@ -187,5 +240,9 @@ footer {
 
   .wrap {
     padding: 0 20px;
+  }
+
+  h1 {
+    font-size: 34px;
   }
 }
